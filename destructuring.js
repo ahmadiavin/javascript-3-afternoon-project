@@ -32,8 +32,9 @@ let {color, make, model, year} = carDetails;
   Use object destructuring to save the object properties to new variables. 
   The property names are firstName, lastName, and title.
 */
-let {title, firstName, lastName} = obj;
+
 function greeting( obj ) {
+  let {firstName, lastName, title} = obj;
   //Code Here
   
   // Do not edit the code below.
