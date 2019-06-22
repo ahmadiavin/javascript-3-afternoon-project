@@ -50,9 +50,14 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
-
+let tax = prices.map(function(element){
+  element * 1.07
+})
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices =  prices.map(function(element){
+  element * 1.07
+})
+// = prices.map(/* Provide Your Callback Here );
 
 
 
@@ -69,9 +74,14 @@ const populations = [8175133, 3792621, 2695598, 2100263];
   function(runningTotal, curElement, curIndex, wholeArray){} Function Form
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
-
+let pop = populations.reduce(function(runningTotal, curElement){
+  return runningTotal + curElement
+})
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce(function(runningTotal, curElement){
+  return runningTotal + curElement
+})
+//  = populations.reduce(/* Provide Your Callback Here */)
 
 
 
@@ -95,9 +105,14 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
   Use the filter method to return only the monsters that have a CP of over 200.
 */
-
+let buff = monstersInYourPocket.filter(function(element, index, arr){
+  return element.CP >= 200
+})
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest  = monstersInYourPocket.filter(function(element, index, arr){
+  return element.CP >= 200
+})
+// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
 
@@ -110,11 +125,22 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 {"price":48,"tax":0.13}];
 // Do not edit code above.
 
+let bigTotals  = orders.map(function(element){
+ return element.price * (1+ element.tax);
+ 
+})
+
+
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, 
+  one total for each order.
 */
 
-let orderTotals // Code here
+let orderTotals = orders.map(function(element){
+  return element.price * (1+ element.tax);
+  
+ })
+// Code here
 
 
 
@@ -130,10 +156,25 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}];
 // Do not edit the code above.
 
+
 /*
   Use a high order method to create to get the sum of bobsTotal.
 */
+// let cleanBob = purchases.filter(function(element, i, arr){
+//   return purchases.owner === "Bob";
+// })
 
-let bobsTotal //Code Here
+// let bobsTotal = purchases.reduce(function(total, element, i, arr){
+//   return total + cleanBob.price
+// }, 0)
+
+var bobsTotal = purchases.filter((val, i, arr) => {
+  return purchases[i].owner === 'Bob'})
+  .reduce(function(total, val) {
+  return total + val.price
+  }, 0);
+  
+bobsTotal
+//Code Here
 
 
