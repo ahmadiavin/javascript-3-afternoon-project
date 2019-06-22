@@ -174,7 +174,7 @@ var bobsTotal = purchases.filter((val, i, arr) => {
   return total + val.price
   }, 0);
   
-bobsTotal
+
 //Code Here
 
 
