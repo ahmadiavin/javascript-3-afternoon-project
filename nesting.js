@@ -97,7 +97,6 @@ function removeDuplicates(){
 }
 
 
-console.log(removeDuplicates())
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -165,18 +164,19 @@ var myCar = {
 
 //Code Here
 
+ 
+
+
 function recordCleaner(){
-  for(var i=0, len=myCar.accidents.length; i < len; i++)
-    if (myCar.accidents.length [i] === true) {
-      myCar.accidents.atFaultForAccident.splice(i, false)
+  for (i = 0; i < myCar.length; i++){
+    if (myCar[i].accidents.atFaultForAccident === true) {
+      myCar[i].accidents.atFaultForAccident.splice([i],false)
     }
-  
-
-
+  }
 }
-// let recordCleaner = myCar.filter(function recordCleaner(element){
-//   return element.accidents.atFaultForAccident = false;
-// })
+
+
+
 
 ////////// PROBLEM 5 //////////
 

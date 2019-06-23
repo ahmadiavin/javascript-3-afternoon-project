@@ -11,13 +11,13 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
@@ -40,10 +40,13 @@
 */
 
 function showValues( obj ) {
-  
-  //Code Here
+  let arr = []; 
+  for(var key in obj) {
+    arr.push(obj[key])
+  }
+  return arr.join("");
 }
-
+showValues(values)
 
 
 ////////// PROBLEM 2 //////////
@@ -55,6 +58,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function greaterThan10(obj){
+  for(var key in obj){
+    if(obj[key]>10){
+      obj[key]=0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -67,6 +78,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+function double(obj){
+  for(var key in obj){
+    obj[key] = obj[key] * 2;
+  }
+  return obj;
+}
 
 
 
@@ -81,7 +98,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj){
+  let stringy = "";
+  for(let key in obj){
+    if(key.startsWith("sh")){
+      stringy += obj[key];
+    }
+  }
+  return stringy;
+}
 
 
 /* 
@@ -112,7 +137,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function removePassword(obj){
+  for(let key in obj){
+    if(key === "password"){
+      delete obj[key];
+    }
+  }
+ return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -132,7 +164,16 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+function theRemover(obj){
+  for(let key in obj){
+    if(obj[key]>100){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
+theRemover(deleteTheBigNumbers);
 
 ////////// PROBLEM 7 //////////
 
@@ -144,6 +185,15 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function startsWithK(obj){
+  for(let key in obj){
+    if(key.startsWith("k")){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+
 
 
 
@@ -159,5 +209,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function hiddenTreasure(obj){
+  for(let key in obj){
+    if(!obj[key].includes("treasure")){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
